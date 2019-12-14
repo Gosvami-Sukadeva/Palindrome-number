@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Palindrome Example</title>
+  </head>
+
+  <body>
+    <h3>Palindrome</h3>
+    <script type="text/javascript">
+      function palindrome(myString) {
+        //Remove special characters, spaces and make lowercase
+        var removeChar = myString.replace(/[^A-Z0-9]/gi, "").toLowerCase();
+
+        //Reverse removeChar for comparison
+
+        var checkPalindrome = removeChar
+          .split("")
+          .reverse()
+          .join("");
+
+        //Check whether the word is Palindrome or not
+
+        if (removeChar === checkPalindrome) {
+          document.write("<div>" + myString + " is a Palindrome </div>");
+        } else {
+          document.write("<div>" + myString + " is not a Palindrome </div>");
+        }
+      }
+      palindrome('"Oh who was it I saw, oh who?"');
+      palindrome('"Madam"');
+      palindrome('"Star Wars"');
+    </script>
+  </body>
+</html>
